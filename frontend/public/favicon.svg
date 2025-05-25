@@ -1,0 +1,42 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradientBottom" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    
+    <linearGradient id="gradientMiddle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="100%" stop-color="#8B5CF6" />
+    </linearGradient>
+    
+    <linearGradient id="gradientTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#A78BFA" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base layer (rotated 45 degrees) -->
+  <g transform="translate(24 24) rotate(45)">
+    <rect x="-18" y="-18" width="36" height="36" rx="6" fill="url(#gradientBottom)" />
+  </g>
+  
+  <!-- Middle layer (rotated 12 degrees) -->
+  <g transform="translate(24 24) rotate(12)">
+    <rect x="-18" y="-18" width="36" height="36" rx="6" fill="url(#gradientMiddle)" opacity="0.8" />
+  </g>
+  
+  <!-- Top layer (rotated -12 degrees with letter) -->
+  <g transform="translate(24 24) rotate(-12)">
+    <rect x="-18" y="-18" width="36" height="36" rx="6" fill="url(#gradientTop)" />
+    <text
+      x="0"
+      y="8"
+      font-family="Arial, sans-serif"
+      font-size="28"
+      font-weight="bold"
+      fill="white"
+      text-anchor="middle"
+    >T</text>
+  </g>
+</svg>
