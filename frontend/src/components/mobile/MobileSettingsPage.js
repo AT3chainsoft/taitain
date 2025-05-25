@@ -117,22 +117,7 @@ const MobileSettingsPage = () => {
       </div>
       
       {/* Security Section */}
-      <div className="bg-white rounded-xl shadow mb-6 overflow-hidden">
-        <h2 className="px-4 pt-4 text-sm font-medium text-gray-500 uppercase tracking-wider">
-          Security
-        </h2>
-        
-        <div className="p-4 flex items-center justify-between border-b border-gray-100" onClick={() => navigate('/security')}>
-          <div className="flex items-center">
-            <ShieldCheckIcon className="h-6 w-6 text-primary-600 mr-3" />
-            <div>
-              <span className="font-medium block">Security Settings</span>
-              <span className="text-xs text-gray-500">2FA, Password</span>
-            </div>
-          </div>
-          <ArrowRightIcon className="h-5 w-5 text-gray-400" />
-        </div>
-      </div>
+  
       
       {/* Support & About Section */}
       <div className="bg-white rounded-xl shadow mb-6 overflow-hidden">

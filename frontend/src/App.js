@@ -29,6 +29,7 @@ import DepositsPage from './pages/admin/DepositsPage';
 import WithdrawalsPage from './pages/admin/WithdrawalsPage';
 import StakingsPage from './pages/admin/StakingsPage';
 import SettingsPage from './pages/admin/SettingsPage';
+import AdminLoginPage from './pages/AdminLoginPage';
 
 // Import the new ticket pages
 import SupportPage from './pages/SupportPage';
@@ -96,6 +97,9 @@ function App() {
             <Route path="login" element={<LoginPage />} />
             <Route path="register" element={<RegisterPage />} />
             <Route path="auth/google/callback" element={<GoogleAuthSuccess />} />
+            
+            {/* Add Admin Login Route */}
+            <Route path="admin/login" element={<AdminLoginPage />} />
             
             {/* Protected routes */}
             <Route path="dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />

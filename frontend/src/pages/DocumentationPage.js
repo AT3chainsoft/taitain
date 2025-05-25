@@ -58,7 +58,7 @@ const DocumentationPage = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center">
               <BookOpenIcon className="h-8 w-8 mr-3 text-white opacity-75" />
-              <h1 className="text-2xl md:text-3xl font-bold">Taitan Staking Documentation</h1>
+              <h1 className="text-2xl md:text-3xl font-bold">Titan Platform Documentation</h1>
             </div>
             <div className="w-full md:w-96">
               <div className="relative">
@@ -81,13 +81,14 @@ const DocumentationPage = () => {
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-            {/* Sidebar */}
+            {/* Sidebar - keeping same structure but updating content */}
             <div className="hidden lg:block lg:col-span-3">
               <nav className="sticky top-20 space-y-1 py-8">
                 <div className="px-3 pb-4 text-sm font-medium text-gray-500 uppercase tracking-wider">
                   Table of Contents
                 </div>
                 
+                {/* Same sidebar items structure */}
                 <SidebarItem 
                   icon={BookOpenIcon} 
                   text="Introduction" 
@@ -98,63 +99,55 @@ const DocumentationPage = () => {
                 
                 <SidebarItem 
                   icon={UserIcon} 
-                  text="Account Setup" 
-                  sectionId="account-setup" 
+                  text="Getting Started" 
+                  sectionId="getting-started" 
                   activeSection={activeSection} 
-                  onClick={() => scrollToSection('account-setup')} 
+                  onClick={() => scrollToSection('getting-started')} 
                 />
                 
                 <SidebarItem 
                   icon={ShieldCheckIcon} 
-                  text="Security" 
+                  text="Account Security" 
                   sectionId="security" 
                   activeSection={activeSection} 
                   onClick={() => scrollToSection('security')} 
                 />
                 
                 <div className="px-3 pt-6 pb-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                  Staking
+                  Platform Features
                 </div>
                 
                 <SidebarItem 
                   icon={CurrencyDollarIcon} 
-                  text="Staking Basics" 
-                  sectionId="staking-basics" 
+                  text="Deposit & Withdraw" 
+                  sectionId="deposit-withdraw" 
                   activeSection={activeSection} 
-                  onClick={() => scrollToSection('staking-basics')} 
+                  onClick={() => scrollToSection('deposit-withdraw')} 
                 />
                 
                 <SidebarItem 
                   icon={ChartBarIcon} 
-                  text="Staking Strategies" 
-                  sectionId="strategies" 
+                  text="Staking Packages" 
+                  sectionId="staking-packages" 
                   activeSection={activeSection} 
-                  onClick={() => scrollToSection('strategies')} 
+                  onClick={() => scrollToSection('staking-packages')} 
                 />
                 
                 <SidebarItem 
                   icon={GiftIcon} 
-                  text="Rewards" 
-                  sectionId="rewards" 
-                  activeSection={activeSection} 
-                  onClick={() => scrollToSection('rewards')} 
-                />
-                
-                <div className="px-3 pt-6 pb-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
-                  Platform
-                </div>
-                
-                <SidebarItem 
-                  icon={GiftIcon} 
-                  text="Referral Program" 
+                  text="Referral System" 
                   sectionId="referrals" 
                   activeSection={activeSection} 
                   onClick={() => scrollToSection('referrals')} 
                 />
                 
+                <div className="px-3 pt-6 pb-2 text-sm font-medium text-gray-500 uppercase tracking-wider">
+                  Help & Support
+                </div>
+                
                 <SidebarItem 
                   icon={ChatBubbleLeftRightIcon} 
-                  text="Support" 
+                  text="Contact Support" 
                   sectionId="support" 
                   activeSection={activeSection} 
                   onClick={() => scrollToSection('support')} 
@@ -170,7 +163,7 @@ const DocumentationPage = () => {
               </nav>
             </div>
             
-            {/* Main content */}
+            {/* Main content - updating with more practical information */}
             <div className="lg:col-span-9">
               <div className="prose prose-lg max-w-none">
                 <DocSection
@@ -180,23 +173,23 @@ const DocumentationPage = () => {
                   content={
                     <>
                       <p className="text-lg text-gray-600 leading-relaxed">
-                        Welcome to Taitan Staking! This documentation will guide you through using our platform
-                        to stake your cryptocurrency assets and earn rewards. Whether you're new to staking or an
-                        experienced user, you'll find everything you need to know about our platform here.
+                        Welcome to the Titan Platform documentation. This guide will help you navigate our platform and understand how to 
+                        use its features effectively. Whether you're new to cryptocurrency staking or an experienced user, 
+                        you'll find practical information to help you make the most of our services.
                       </p>
                       
                       <div className="flex flex-wrap gap-4 my-8">
                         <FeatureCard 
-                          title="Secure" 
-                          description="Multi-layer security protocols protecting your assets" 
+                          title="User-Friendly" 
+                          description="Simple interface designed for both beginners and experienced users" 
                         />
                         <FeatureCard 
-                          title="Easy" 
-                          description="User-friendly interface for beginners and experts alike" 
+                          title="Flexible Staking" 
+                          description="Multiple package options with different timeframes" 
                         />
                         <FeatureCard 
-                          title="Profitable" 
-                          description="Maximized returns through optimized staking strategies" 
+                          title="Transparent" 
+                          description="Clear information about fees, returns, and lock periods" 
                         />
                       </div>
                     </>
@@ -204,43 +197,111 @@ const DocumentationPage = () => {
                 />
                 
                 <DocSection
-                  id="account-setup"
+                  id="getting-started"
                   icon={UserIcon}
-                  title="Account Setup"
+                  title="Getting Started"
                   content={
                     <>
-                      <h3 className="text-xl font-semibold text-gray-800">Registration</h3>
+                      <h3 className="text-xl font-semibold text-gray-800">Creating Your Account</h3>
                       <p>
-                        To start using Taitan Staking, you need to create an account. Registration is simple and 
-                        only requires your email address and a secure password. For enhanced security, we recommend 
-                        enabling two-factor authentication (2FA) after registration.
+                        To use the Titan Platform, you first need to create an account.:
                       </p>
                       
                       <div className="rounded-lg border border-gray-200 p-6 my-6 bg-gray-50">
-                        <h4 className="text-lg font-medium text-gray-800">Registration Process</h4>
-                        <ol className="mt-4 pl-6 list-decimal">
-                          <li className="mb-2">Click on the "Sign Up" button in the top-right corner</li>
-                          <li className="mb-2">Enter your email address and create a password</li>
-                          <li className="mb-2">Verify your email by clicking the link sent to your inbox</li>
-                          <li className="mb-2">Complete your profile information</li>
-                          <li>Enable 2FA for additional security (recommended)</li>
-                        </ol>
+                        <h4 className="text-lg font-medium text-gray-800">Registration Options</h4>
+                        <ul className="mt-4 pl-6 list-disc space-y-2">
+                          <li><strong>Wallet Connection:</strong> Connect directly with MetaMask, Trust Wallet, or other compatible wallets</li>
+                        </ul>
                       </div>
                       
-                      <h3 className="text-xl font-semibold text-gray-800">Wallet Connection</h3>
-                      <p>
-                        After creating your account, you'll need to connect your cryptocurrency wallet. We support 
-                        various wallet providers to ensure maximum compatibility and user convenience.
-                      </p>
+                
                       
                       <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-50 p-4 my-4">
                         <div className="flex">
+                          
+                        </div>
+                      </div>
+                    </>
+                  }
+                />
+                
+               
+                
+                <DocSection
+                  id="deposit-withdraw"
+                  icon={CurrencyDollarIcon}
+                  title="Deposit & Withdraw"
+                  content={
+                    <>
+                      <h3 className="text-xl font-semibold text-gray-800">Making Deposits</h3>
+                      <p>
+                        To fund your Titan Platform account, you can deposit various cryptocurrencies. Currently, we support 
+                        USDT and USDC on multiple networks:
+                      </p>
+                      
+                      <div className="my-6 overflow-x-auto">
+                        <table className="min-w-full divide-y divide-gray-200">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Currency
+                              </th>
+                              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Networks
+                              </th>
+                              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Min. Deposit
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="bg-white divide-y divide-gray-200">
+                            <tr>
+                              <td className="px-6 py-4 whitespace-nowrap">USDT</td>
+                              <td className="px-6 py-4 whitespace-nowrap">TRC20, Polygon</td>
+                              <td className="px-6 py-4 whitespace-nowrap">10 USDT</td>
+                            </tr>
+                            <tr>
+                              <td className="px-6 py-4 whitespace-nowrap">USDC</td>
+                              <td className="px-6 py-4 whitespace-nowrap">TRC20, Polygon</td>
+                              <td className="px-6 py-4 whitespace-nowrap">10 USDC</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      
+                      <p>
+                        When making a deposit, follow these steps:
+                      </p>
+                      
+                      <ol className="list-decimal pl-6 my-4 space-y-2">
+                        <li>Navigate to the Deposit page from your dashboard</li>
+                        <li>Select the cryptocurrency and network you wish to use</li>
+                        <li>Send funds to the displayed wallet address (double-check the address)</li>
+                        <li>Enter your transaction details and submit them for verification</li>
+                        <li>Wait for confirmation (typically 10-30 minutes, depending on network congestion)</li>
+                      </ol>
+                      
+                      <h3 className="text-xl font-semibold text-gray-800 mt-8">Making Withdrawals</h3>
+                      <p>
+                        To withdraw funds from your Titan Platform account:
+                      </p>
+                      
+                      <ol className="list-decimal pl-6 my-4 space-y-2">
+                        <li>Go to the Withdraw page from your dashboard</li>
+                        <li>Enter the withdrawal amount and your wallet address</li>
+                        <li>Confirm the withdrawal details</li>
+                        <li>Check your email for the withdrawal confirmation link</li>
+                        <li>Wait for processing (withdrawals are typically processed within 24 hours)</li>
+                      </ol>
+                      
+                      <div className="rounded-lg border-l-4 border-blue-400 bg-blue-50 p-4 my-4">
+                        <div className="flex">
                           <div className="ml-3">
-                            <h3 className="text-sm font-medium text-yellow-800">Important Note</h3>
-                            <div className="mt-2 text-sm text-yellow-700">
+                            <h3 className="text-sm font-medium text-blue-800">Withdrawal Fees</h3>
+                            <div className="mt-2 text-sm text-blue-700">
                               <p>
-                                Never share your wallet's private keys or recovery phrases with anyone, including Taitan Staking support.
-                                We will never ask for this information.
+                                Withdrawal fees vary by network. Current fees: TRC20 (1 USDT/USDC), Polygon (2 USDT/USDC).
+                                These fees cover network transaction costs and may change based on network conditions.
                               </p>
                             </div>
                           </div>
@@ -251,144 +312,61 @@ const DocumentationPage = () => {
                 />
                 
                 <DocSection
-                  id="security"
-                  icon={ShieldCheckIcon}
-                  title="Security"
-                  content={
-                    <>
-                      <p>
-                        At Taitan Staking, we prioritize the security of your assets and personal information. 
-                        We employ industry-leading security practices, including encryption, secure coding practices, 
-                        and regular security audits.
-                      </p>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-                        <SecurityFeature
-                          title="Two-Factor Authentication"
-                          description="Add an extra layer of security to your account with 2FA"
-                        />
-                        <SecurityFeature
-                          title="Cold Storage"
-                          description="Majority of funds are stored in offline cold wallets"
-                        />
-                        <SecurityFeature
-                          title="Regular Audits"
-                          description="Third-party security audits of all smart contracts"
-                        />
-                        <SecurityFeature
-                          title="Bug Bounty Program"
-                          description="Active program for reporting security vulnerabilities"
-                        />
-                      </div>
-                      
-                      <div className="flex my-6">
-                        <div className="flex-1 bg-gray-50 rounded-lg p-6 flex items-center">
-                          <div>
-                            <p className="text-base text-gray-500">For more detailed information about our security measures, please visit our</p>
-                            <Link to="/security" className="mt-2 inline-flex items-center text-primary-600 hover:text-primary-800 font-medium">
-                              Security page
-                              <ArrowRightIcon className="ml-1 h-4 w-4" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  }
-                />
-                
-                <DocSection
-                  id="staking-basics"
-                  icon={CurrencyDollarIcon}
-                  title="Staking Basics"
-                  content={
-                    <>
-                      <p>
-                        Staking is the process of participating in transaction validation on a proof-of-stake (PoS) 
-                        blockchain. By staking your cryptocurrencies, you help secure the network and earn rewards 
-                        in return. Our platform simplifies this process, allowing you to stake your assets with just 
-                        a few clicks.
-                      </p>
-                      
-                      <div className="my-8 relative">
-                        <div className="relative bg-white p-6 rounded-lg border border-gray-200 overflow-hidden">
-                          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary-500 to-primary-600"></div>
-                          <h4 className="text-lg font-medium text-gray-900 mb-4">How Staking Works</h4>
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <StakingStep 
-                              number="01" 
-                              title="Deposit" 
-                              description="Transfer your crypto assets to your Taitan Staking wallet" 
-                            />
-                            <StakingStep 
-                              number="02" 
-                              title="Stake" 
-                              description="Choose your staking plan and lock your assets" 
-                            />
-                            <StakingStep 
-                              number="03" 
-                              title="Earn" 
-                              description="Receive staking rewards automatically" 
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  }
-                />
-                
-                {/* Continue with other sections following the same pattern */}
-                <DocSection
-                  id="strategies"
+                  id="staking-packages"
                   icon={ChartBarIcon}
-                  title="Staking Strategies"
+                  title="Staking Packages"
                   content={
                     <>
                       <p>
-                        Different staking strategies can be employed depending on your investment goals and risk tolerance. 
-                        Our platform offers multiple staking plans with varying lock-up periods and reward rates. Generally, 
-                        longer staking periods offer higher rewards but come with less flexibility.
+                        Titan Platform offers different staking packages to suit your investment goals. Each package has its own 
+                        lock period and return rate. Below are the current packages available:
                       </p>
                       
                       <div className="my-8">
                         <div className="bg-white overflow-hidden shadow rounded-lg">
                           <div className="px-4 py-5 sm:px-6 bg-gray-50 border-b border-gray-200">
-                            <h3 className="text-lg leading-6 font-medium text-gray-900">Staking Plans Comparison</h3>
+                            <h3 className="text-lg leading-6 font-medium text-gray-900">Available Staking Packages</h3>
                           </div>
                           <div className="px-4 py-5 sm:p-6">
                             <div className="overflow-x-auto">
                               <table className="min-w-full divide-y divide-gray-200">
                                 <thead className="bg-gray-50">
                                   <tr>
-                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Plan</th>
+                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Package</th>
+                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Min Amount</th>
                                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lock Period</th>
-                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">APY Range</th>
+                                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Weekly Return</th>
                                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Best For</th>
                                   </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
                                   <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Flexible</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">None</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1-4%</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Liquidity needs</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">$100 Package</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$100</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 month</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.5% ($2.50)</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Beginners</td>
                                   </tr>
                                   <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Standard</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">30 days</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4-8%</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Balanced approach</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">$500 Package</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$500</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 months</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.5% ($12.50)</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Medium investors</td>
                                   </tr>
                                   <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Premium</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">90 days</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8-12%</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Growth focus</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">$1000 Package</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$1,000</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 months</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.5% ($25.00)</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Regular investors</td>
                                   </tr>
                                   <tr>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Expert</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">180+ days</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">12-18%</td>
-                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Maximizing returns</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">$5000 Package</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$5,000</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5 months</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3% ($150.00)</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Serious investors</td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -396,33 +374,30 @@ const DocumentationPage = () => {
                           </div>
                         </div>
                       </div>
-                    </>
-                  }
-                />
-                
-                <DocSection
-                  id="rewards"
-                  icon={GiftIcon}
-                  title="Rewards"
-                  content={
-                    <>
-                      <p>
-                        Staking rewards are distributed according to the specific plan you choose. Rewards can be 
-                        automatically compounded or withdrawn depending on your preference. The annual percentage 
-                        yield (APY) varies based on market conditions and the cryptocurrency being staked.
-                      </p>
                       
-                      <div className="my-8">
-                        <div className="bg-gradient-to-r from-primary-50 to-blue-50 rounded-lg p-6 border border-primary-100">
-                          <h4 className="text-lg font-medium text-gray-900 mb-4">Reward Options</h4>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                              <h5 className="text-primary-600 font-medium mb-2">Auto-Compound</h5>
-                              <p className="text-gray-600">Automatically reinvest your rewards to maximize growth over time through the power of compound interest.</p>
-                            </div>
-                            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                              <h5 className="text-primary-600 font-medium mb-2">Regular Payout</h5>
-                              <p className="text-gray-600">Receive your rewards directly to your wallet at regular intervals to use as you wish.</p>
+                      <h3 className="text-xl font-semibold text-gray-800">How to Start Staking</h3>
+                      <ol className="list-decimal pl-6 my-4 space-y-2">
+                        <li>Ensure you have sufficient funds in your account</li>
+                        <li>Navigate to the Staking page from your dashboard</li>
+                        <li>Select a package that meets your investment goals</li>
+                        <li>Review the details (amount, lock period, expected returns)</li>
+                        <li>Confirm your staking package</li>
+                      </ol>
+                      
+                      <div className="rounded-lg border-l-4 border-green-400 bg-green-50 p-4 my-6">
+                        <div className="flex">
+                          <div className="ml-3">
+                            <h3 className="text-sm font-medium text-green-800">Profit Calculation Example</h3>
+                            <div className="mt-2 text-sm text-green-700">
+                              <p>
+                                For a $1,000 stake with 2.5% weekly return over 3 months (≈13 weeks):
+                                <br />
+                                Weekly profit: $25
+                                <br />
+                                Total profit: $25 × 13 weeks = $325
+                                <br />
+                                Total return: $1,000 + $325 = $1,325
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -434,36 +409,78 @@ const DocumentationPage = () => {
                 <DocSection
                   id="referrals"
                   icon={GiftIcon}
-                  title="Referral Program"
+                  title="Referral System"
                   content={
                     <>
                       <p>
-                        Our referral program allows you to earn additional rewards by inviting friends to join 
-                        Taitan Staking. When someone signs up using your referral link and makes a qualifying stake, 
-                        both you and your referral receive bonus rewards.
+                        Our referral program allows you to earn additional rewards by inviting friends to the Titan Platform. 
+                        When someone registers using your referral code and creates a staking package, you'll receive a bonus.
                       </p>
                       
-                      <div className="flex flex-col md:flex-row gap-6 my-8">
-                        <div className="flex-1 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg p-6 border border-indigo-100">
-                          <h4 className="text-lg font-medium text-indigo-900 flex items-center">
-                            <span className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-indigo-200 text-indigo-600 mr-2">1</span>
-                            You Refer
-                          </h4>
-                          <p className="mt-2 text-gray-600">Share your unique referral link with friends and colleagues</p>
+                      <div className="my-6 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h3 className="text-lg font-medium text-gray-900 mb-4">How the Referral Program Works</h3>
+                        
+                        <div className="space-y-6">
+                          <div className="flex">
+                            <div className="flex-shrink-0">
+                              <div className="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-semibold">1</div>
+                            </div>
+                            <div className="ml-4">
+                              <h4 className="text-base font-medium text-gray-900">Share Your Referral Code</h4>
+                              <p className="mt-1 text-sm text-gray-500">
+                                Your unique referral code can be found on your dashboard or referral page
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex">
+                            <div className="flex-shrink-0">
+                              <div className="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-semibold">2</div>
+                            </div>
+                            <div className="ml-4">
+                              <h4 className="text-base font-medium text-gray-900">Friends Register and Stake</h4>
+                              <p className="mt-1 text-sm text-gray-500">
+                                When friends sign up using your code and make their first stake
+                              </p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex">
+                            <div className="flex-shrink-0">
+                              <div className="h-10 w-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-600 font-semibold">3</div>
+                            </div>
+                            <div className="ml-4">
+                              <h4 className="text-base font-medium text-gray-900">Earn Referral Bonuses</h4>
+                              <p className="mt-1 text-sm text-gray-500">
+                                You receive 5% of their first stake amount added directly to your balance
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="flex-1 bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 border border-purple-100">
-                          <h4 className="text-lg font-medium text-purple-900 flex items-center">
-                            <span className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-purple-200 text-purple-600 mr-2">2</span>
-                            They Join
-                          </h4>
-                          <p className="mt-2 text-gray-600">Your friends create an account and stake crypto assets</p>
-                        </div>
-                        <div className="flex-1 bg-gradient-to-br from-pink-50 to-rose-50 rounded-lg p-6 border border-pink-100">
-                          <h4 className="text-lg font-medium text-pink-900 flex items-center">
-                            <span className="flex-shrink-0 flex items-center justify-center h-8 w-8 rounded-full bg-pink-200 text-pink-600 mr-2">3</span>
-                            Both Earn
-                          </h4>
-                          <p className="mt-2 text-gray-600">You both receive bonus rewards on your staking earnings</p>
+                      </div>
+                      
+                      <h3 className="text-xl font-semibold text-gray-800 mt-6">Referral Tracking</h3>
+                      <p>
+                        You can monitor your referrals and rewards on the Referral page of your dashboard. This page shows:
+                      </p>
+                      <ul className="list-disc pl-6 my-4 space-y-2">
+                        <li>Your unique referral code and referral link</li>
+                        <li>Number of users who have registered with your code</li>
+                        <li>Total earnings from referrals</li>
+                        <li>Detailed history of referral rewards</li>
+                      </ul>
+                      
+                      <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-50 p-4 my-4">
+                        <div className="flex">
+                          <div className="ml-3">
+                            <h3 className="text-sm font-medium text-yellow-800">Important Note</h3>
+                            <div className="mt-2 text-sm text-yellow-700">
+                              <p>
+                                Referral bonuses are paid when your referred friends make their first stake, not upon registration. 
+                                There's no limit to how many people you can refer.
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </>
@@ -473,44 +490,46 @@ const DocumentationPage = () => {
                 <DocSection
                   id="support"
                   icon={ChatBubbleLeftRightIcon}
-                  title="Support"
+                  title="Contact Support"
                   content={
                     <>
                       <p>
-                        If you encounter any issues or have questions, our support team is available 24/7. You can 
-                        reach us through the Support page, email at support@titanstaking.com, or through live chat on our platform.
+                        If you need help with the Titan Platform, our support team is ready to assist you. There are several ways 
+                        to get in touch with us:
                       </p>
                       
-                      <div className="my-8 bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200">
-                        <div className="divide-y divide-gray-200">
-                          <div className="px-6 py-5 flex items-start">
-                            <div className="flex-shrink-0">
-                              <ChatBubbleLeftRightIcon className="h-6 w-6 text-primary-600" />
-                            </div>
-                            <div className="ml-4">
-                              <h4 className="text-lg font-medium text-gray-900">Support Tickets</h4>
-                              <p className="mt-1 text-gray-600">
-                                Create a support ticket for complex issues that require detailed investigation
+                      <div className="my-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                          <h4 className="text-lg font-medium text-gray-900 mb-2">
+                            <ChatBubbleLeftRightIcon className="h-6 w-6 text-primary-600 inline mr-2" />
+                            Support Tickets
+                          </h4>
+                          <p className="text-gray-600 mb-4">
+                            Create a support ticket for detailed assistance with account issues or complex questions.
+                          </p>
+                          <Link to="/support" className="text-primary-600 hover:text-primary-800 font-medium inline-flex items-center">
+                            Open a support ticket
+                            <ArrowRightIcon className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                        
+                      </div>
+                      
+                      <h3 className="text-xl font-semibold text-gray-800">Support Hours</h3>
+                      <p className="mb-4">
+                        Our support team is available Monday through Friday, 9:00 AM to 5:00 PM UTC.
+                        We strive to respond to all inquiries within 24 hours during business days.
+                      </p>
+                      
+                      <div className="rounded-lg border-l-4 border-blue-400 bg-blue-50 p-4 my-4">
+                        <div className="flex">
+                          <div className="ml-3">
+                            <h3 className="text-sm font-medium text-blue-800">Before Contacting Support</h3>
+                            <div className="mt-2 text-sm text-blue-700">
+                              <p>
+                                Please check our FAQ section below first, as many common questions are already answered there.
+                                This may save you time waiting for a response.
                               </p>
-                              <Link to="/support" className="mt-3 inline-flex items-center text-primary-600 hover:text-primary-800 font-medium">
-                                Open a ticket
-                                <ArrowRightIcon className="ml-1 h-4 w-4" />
-                              </Link>
-                            </div>
-                          </div>
-                          <div className="px-6 py-5 flex items-start">
-                            <div className="flex-shrink-0">
-                              <QuestionMarkCircleIcon className="h-6 w-6 text-primary-600" />
-                            </div>
-                            <div className="ml-4">
-                              <h4 className="text-lg font-medium text-gray-900">Community Forum</h4>
-                              <p className="mt-1 text-gray-600">
-                                Get help from the community and share your knowledge with others
-                              </p>
-                              <Link to="/forum" className="mt-3 inline-flex items-center text-primary-600 hover:text-primary-800 font-medium">
-                                Visit forum
-                                <ArrowRightIcon className="ml-1 h-4 w-4" />
-                              </Link>
                             </div>
                           </div>
                         </div>
@@ -527,46 +546,50 @@ const DocumentationPage = () => {
                     <>
                       <div className="space-y-8 mt-6">
                         <FaqItem 
-                          question="What is staking?"
-                          answer="Staking is a way of earning rewards by participating in transaction validation on a proof-of-stake blockchain. By locking up your cryptocurrency, you contribute to network security and earn rewards in return."
+                          question="What is the minimum deposit amount?"
+                          answer="The minimum deposit amount is 10 USDT or 10 USDC, depending on which cryptocurrency you're using."
                         />
                         
                         <FaqItem 
-                          question="How are rewards calculated?"
-                          answer="Rewards are calculated based on the amount staked, the duration of staking, and the current reward rate for the specific cryptocurrency. The formula typically involves the total staked amount, the staking period, and the annual percentage yield (APY)."
+                          question="How long do deposits take to process?"
+                          answer="Once your deposit transaction is confirmed on the blockchain, it typically takes 10-30 minutes for funds to appear in your account. During periods of high network congestion, it may take longer."
                         />
                         
                         <FaqItem 
-                          question="Is there a minimum staking amount?"
-                          answer="Yes, minimum staking amounts vary by cryptocurrency. For most major cryptocurrencies, the minimum amount ranges from $50 to $100 worth of tokens. Please check the specific staking page for details on each cryptocurrency."
+                          question="Can I unstake before the lock period ends?"
+                          answer="No, currently all staking packages have fixed lock periods. You must wait until the lock period ends before you can withdraw your staked funds."
                         />
                         
                         <FaqItem 
-                          question="Can I unstake early?"
-                          answer="Early unstaking may be possible depending on the staking plan, but it typically incurs a penalty fee. Flexible staking allows you to withdraw anytime without penalties, while fixed-term staking plans have early withdrawal fees ranging from 5% to 15% of rewards."
+                          question="When do I receive my staking rewards?"
+                          answer="Staking rewards are calculated weekly but are only paid out at the end of your staking period. The total profit amount will be added to your balance when the stake completes."
                         />
                         
                         <FaqItem 
-                          question="How long does it take to receive rewards?"
-                          answer="Reward distribution times vary by cryptocurrency and staking plan. Flexible staking rewards are typically distributed daily, while fixed-term staking rewards may be distributed weekly or at the end of the staking period."
+                          question="How do referral bonuses work?"
+                          answer="When someone uses your referral code and makes their first stake, you receive 5% of their staked amount as a bonus. For example, if they stake $1,000, you receive $50 added to your balance."
                         />
                         
                         <FaqItem 
-                          question="Are staking rewards taxable?"
-                          answer="In most jurisdictions, staking rewards are considered taxable income. However, tax regulations vary by country, so we recommend consulting with a tax professional for guidance specific to your situation."
+                          question="What are the withdrawal fees?"
+                          answer="Withdrawal fees depend on the network: TRC20 (1 USDT/USDC) and Polygon (2 USDT/USDC). These fees cover the transaction costs on the respective networks."
+                        />
+                        
+                        <FaqItem 
+                          question="How long do withdrawals take to process?"
+                          answer="Withdrawal requests are typically processed within 24 hours. After processing, it may take additional time for the funds to appear in your wallet, depending on network congestion."
                         />
                       </div>
                     </>
                   }
                 />
                 
-                {/* Still Have Questions Section */}
-                <div className="mt-16 bg-gradient-to-r from-primary-50 to-indigo-50 rounded-lg p-8 border border-primary-100">
+                <div className="mt-16 bg-gray-50 rounded-lg p-8 border border-gray-200">
                   <div className="max-w-3xl mx-auto text-center">
                     <QuestionMarkCircleIcon className="h-12 w-12 mx-auto text-primary-500" />
-                    <h3 className="mt-4 text-2xl font-bold text-gray-900">Still have questions?</h3>
+                    <h3 className="mt-4 text-2xl font-bold text-gray-900">Still need help?</h3>
                     <p className="mt-2 text-lg text-gray-600">
-                      Can't find the answer you're looking for? Our team is ready to help you with any questions you may have.
+                      If you couldn't find the answer you're looking for, our support team is ready to help.
                     </p>
                     <div className="mt-6">
                       <Link

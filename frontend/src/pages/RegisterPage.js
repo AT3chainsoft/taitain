@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import axios from '../utils/axios';
+import MobileBrowserNotice from '../components/MobileBrowserNotice';
 
 // Wallet icons as base64 or reliable URLs
 const WALLET_ICONS = {
@@ -214,7 +215,9 @@ const RegisterPage = () => {
           </p>
         </div>
 
-        <div className="bg-white py-4 sm:py-6 px-4 shadow sm:rounded-xl sm:px-6 border border-gray-200">
+        <div className="bg-white py-5 px-4 shadow sm:rounded-lg sm:px-6 border border-gray-200">
+          <MobileBrowserNotice />
+
           {referralCodeFromUrl && (
             <div className="mb-3 sm:mb-4 p-3 bg-green-50 text-green-800 rounded-md border border-green-200 flex items-start">
               <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2 mt-0.5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

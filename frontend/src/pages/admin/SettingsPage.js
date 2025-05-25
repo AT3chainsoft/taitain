@@ -20,12 +20,37 @@ const SettingsPage = () => {
           label: 'Minimum Deposit Amount',
           placeholder: 'Enter minimum deposit amount',
           description: 'Minimum USDT amount users can deposit (0.1 USDT for testing)'
+        }
+      ]
+    },
+    {
+      title: 'Wallet Addresses',
+      icon: WalletIcon,
+      description: 'Configure wallet addresses for different networks',
+      settings: [
+        {
+          key: 'usdt_trc20',
+          label: 'USDT (TRC20)',
+          placeholder: 'Enter TRC20 wallet address for USDT',
+          description: 'USDT deposit address on TRON network'
         },
         {
-          key: 'wallet_usdt_trc20',
-          label: 'USDT (TRC20)',
-          placeholder: 'Enter TRC20 wallet address',
-          description: 'USDT deposit address on TRON network'
+          key: 'usdt_polygon',
+          label: 'USDT (Polygon)',
+          placeholder: 'Enter Polygon wallet address for USDT',
+          description: 'USDT deposit address on Polygon network'
+        },
+        {
+          key: 'usdc_trc20',
+          label: 'USDC (TRC20)',
+          placeholder: 'Enter TRC20 wallet address for USDC',
+          description: 'USDC deposit address on TRON network'
+        },
+        {
+          key: 'usdc_polygon',
+          label: 'USDC (Polygon)',
+          placeholder: 'Enter Polygon wallet address for USDC',
+          description: 'USDC deposit address on Polygon network'
         }
       ]
     },

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useMobile } from '../contexts/MobileContext';
+import MobileBrowserNotice from '../components/MobileBrowserNotice';
 
 // Wallet icons as base64 or reliable URLs
 const WALLET_ICONS = {
@@ -171,6 +172,8 @@ const LoginPage = () => {
         </div>
         
         <div className="bg-white py-5 px-4 shadow sm:rounded-lg sm:px-6 border border-gray-200">
+          <MobileBrowserNotice />
+          
           {error && (
             <div className="mb-4 p-3 bg-red-50 text-red-800 rounded-md border border-red-200 flex items-start">
               <svg className="w-5 h-5 mr-2 mt-0.5 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
